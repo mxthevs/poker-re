@@ -1,5 +1,5 @@
 {
-  "name": "reason-starter",
+  "name": "poker-re",
   "esy": {
     "build": "dune build -p #{self.name}"
   },
