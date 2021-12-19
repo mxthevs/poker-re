@@ -17,6 +17,7 @@ type t =
 
 exception Invalid_suit(string);
 exception Invalid_format(string);
+exception Invalid_value(string);
 
 let invalid_suit = s => {
   raise(Invalid_suit(Printf.sprintf("%s is not a valid suit", s)));
@@ -24,9 +25,9 @@ let invalid_suit = s => {
 let invalid_format = s => {
   raise(Invalid_format(Printf.sprintf("%s is not a valid card format", s)));
 };
-
-let make = (~value, ~suit) => Card(value, suit);
-let make_joker = () => Joker;
+let invalid_value = s => {
+  raise(Invalid_value(Printf.sprintf("%s is not a valid card value", s)));
+};
 
 let val_ = v =>
   switch (v) {
@@ -37,13 +38,24 @@ let val_ = v =>
   | King => "King"
   };
 
-let to_val = s => {
+let str_to_val = s => {
   switch (s) {
   | "Ace" => Ace
   | "Jack" => Jack
   | "Queen" => Queen
   | "King" => King
   | other => Numeric(int_of_string(other))
+  };
+};
+
+let to_val = n => {
+  switch (n) {
+  | 1 => Ace
+  | n when n > 1 && n < 11 => Numeric(n)
+  | 11 => Jack
+  | 12 => Queen
+  | 13 => King
+  | other => invalid_value(string_of_int(n))
   };
 };
 
@@ -72,7 +84,7 @@ let to_string = card => {
 
 let of_string = card => {
   switch (Helpers.split(~str=card, ~c=' ')) {
-  | [suit, _, value] => Card(to_val(value), to_suit(suit))
+  | [suit, _, value] => Card(str_to_val(value), to_suit(suit))
   | [joker] when joker == "Joker" => Joker
   | _other => invalid_format(String.concat(" ", _other))
   };
