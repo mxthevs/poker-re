@@ -1,0 +1,4 @@
+(executable
+ (name ReasonStarter)
+ (public_name ReasonStarter)
+ (libraries StarterLib))

@@ -1,0 +1,19 @@
+{
+  "name": "reason-starter",
+  "esy": {
+    "build": "dune build -p #{self.name}"
+  },
+  "scripts": {
+    "watch": "dune build -p #{self.name} -w"
+  },
+  "dependencies": {
+    "ocaml": "4.10.x",
+    "@esy-ocaml/reason": ">= 3.6.0 < 4.0.0",
+    "@opam/dune": "*"
+  },
+  "devDependencies": {
+    "@opam/merlin": "*",
+    "@opam/ocaml-lsp-server": "*",
+    "@opam/utop": "*"
+  }
+}
