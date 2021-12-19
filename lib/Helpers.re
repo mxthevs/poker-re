@@ -14,3 +14,5 @@ let split = (~str, ~c) => {
 
   List.rev(rev_split'(~str, ~i=0, ~c, ~acc=[]));
 };
+
+let range = n => List.init(n, succ);
