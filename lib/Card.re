@@ -89,3 +89,10 @@ let of_string = card => {
   | _other => invalid_format(String.concat(" ", _other))
   };
 };
+
+let is_joker = card => {
+  switch (card) {
+  | Joker => true
+  | Card(_, _) => false
+  };
+};
