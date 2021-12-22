@@ -1,2 +1,4 @@
 (library
  (name Poker))
+
+(include_subdirs unqualified)
