@@ -7,7 +7,7 @@ let make = (): t => {
     switch (count) {
     | c when c > 52 => acc
     | _ =>
-      let v = to_val;
+      let v = Value.of_int;
       let deck =
         switch (count) {
         | n when n <= 13 => [Card(v(n), Spades), ...acc]
