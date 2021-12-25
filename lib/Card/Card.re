@@ -28,7 +28,7 @@ let of_string = card => {
   switch (Helpers.split(~str=card, ~c=' ')) {
   | [suit, _, value] => Card(Value.of_string(value), Suit.of_string(suit))
   | [joker] when joker == "Joker" => Joker
-  | _other => invalid_format(String.concat(" ", _other))
+  | unknown => invalid_format(String.concat(" ", unknown))
   };
 };
 

@@ -27,7 +27,7 @@ let of_string = s => {
   | "Jack" => Jack
   | "Queen" => Queen
   | "King" => King
-  | other => Numeric(int_of_string(other))
+  | numeric => Numeric(int_of_string(numeric))
   };
 };
 
@@ -38,6 +38,6 @@ let of_int = n => {
   | 11 => Jack
   | 12 => Queen
   | 13 => King
-  | other => invalid_value(string_of_int(n))
+  | _ => invalid_value(string_of_int(n))
   };
 };
