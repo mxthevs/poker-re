@@ -1,10 +1,10 @@
 {
   "checksum": "13ddfd50575e5c32583962e4b50e9488",
-  "root": "reason-starter@link-dev:./esy.json",
+  "root": "poker-re@link-dev:./esy.json",
   "node": {
-    "reason-starter@link-dev:./esy.json": {
-      "id": "reason-starter@link-dev:./esy.json",
-      "name": "reason-starter",
+    "poker-re@link-dev:./esy.json": {
+      "id": "poker-re@link-dev:./esy.json",
+      "name": "poker-re",
       "version": "link-dev:./esy.json",
       "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
       "overrides": [],
