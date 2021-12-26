@@ -1,4 +1,5 @@
 (library
- (name Poker))
+ (name Poker)
+ (libraries console.lib pastel.lib))
 
 (include_subdirs unqualified)

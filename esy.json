@@ -9,7 +9,9 @@
   "dependencies": {
     "ocaml": "4.10.x",
     "@esy-ocaml/reason": ">= 3.6.0 < 4.0.0",
-    "@opam/dune": "*"
+    "@opam/dune": "*",
+    "@reason-native/console": "*",
+    "@reason-native/pastel": "*"
   },
   "devDependencies": {
     "@opam/merlin": "*",
