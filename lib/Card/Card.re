@@ -14,12 +14,15 @@ let invalid_format = s => {
 let to_string = card => {
   switch (card) {
   | Card(value, suit) =>
+    open Fmt;
+
+    let value = Value.to_string(value);
     switch (suit) {
-    | Spades => Printf.sprintf("%s of spades", Value.to_string(value))
-    | Diamonds => Printf.sprintf("%s of diamonds", Value.to_string(value))
-    | Clubs => Printf.sprintf("%s of clubs", Value.to_string(value))
-    | Hearts => Printf.sprintf("%s of hearts", Value.to_string(value))
-    }
+    | Spades => black(Printf.sprintf("%s of spades ♠️", value))
+    | Diamonds => red(Printf.sprintf("%s of diamonds ♦️", value))
+    | Clubs => black(Printf.sprintf("%s of clubs ♣️", value))
+    | Hearts => red(Printf.sprintf("%s of hearts ♥️", value))
+    };
   | Joker => "Joker"
   };
 };
