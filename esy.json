@@ -4,7 +4,8 @@
     "build": "dune build -p #{self.name}"
   },
   "scripts": {
-    "watch": "dune build -p #{self.name} -w"
+    "watch": "dune build -p #{self.name} -w",
+    "utop": "esy dune utop lib -- -implicit-bindings"
   },
   "dependencies": {
     "ocaml": "4.10.x",
@@ -16,6 +17,6 @@
   "devDependencies": {
     "@opam/merlin": "*",
     "@opam/ocaml-lsp-server": "*",
-    "@opam/utop": "*"
+    "@opam/rtop": "*"
   }
 }
