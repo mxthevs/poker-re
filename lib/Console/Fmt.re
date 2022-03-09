@@ -1,5 +1,5 @@
 open Pastel;
-open Optional.Infix;
+open Optional.Syntax;
 
 let format = (~inverse=?, s) => {
   <Pastel inverse={inverse || false}> s </Pastel>;
