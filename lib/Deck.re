@@ -1,5 +1,6 @@
 type t = list(Card.t);
 
+// TODO: create a deck without jokers?
 let make = (): t => {
   open Card;
 
