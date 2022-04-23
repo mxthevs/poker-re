@@ -1,4 +1,5 @@
 (library
- (name Poker))
+ (name Poker)
+ (libraries notty.unix))
 
 (include_subdirs unqualified)

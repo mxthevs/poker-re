@@ -11,17 +11,18 @@ let invalid_format = s => {
   raise(Invalid_format(Printf.sprintf("%s is not a valid card format", s)));
 };
 
-let to_string = card => {
+let to_notty_image = card => {
   switch (card) {
   | Card(value, suit) =>
+    open Fmt;
     let value = Value.to_string(value);
     switch (suit) {
-    | Spades => Printf.sprintf("%s of spades ♠️", value)
-    | Diamonds => Printf.sprintf("%s of diamonds ♦️", value)
-    | Clubs => Printf.sprintf("%s of clubs ♣️", value)
-    | Hearts => Printf.sprintf("%s of hearts ♥️", value)
+    | Spades => black(Printf.sprintf("%s of spades ♠️", value))
+    | Diamonds => red(Printf.sprintf("%s of diamonds ♦️", value))
+    | Clubs => black(Printf.sprintf("%s of clubs ♣️", value))
+    | Hearts => red(Printf.sprintf("%s of hearts ♥️", value))
     };
-  | Joker => "Joker"
+  | Joker => Notty.I.string("Joker")
   };
 };
 
