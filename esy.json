@@ -10,13 +10,15 @@
   "dependencies": {
     "ocaml": "4.14.x",
     "@opam/reason": ">= 3.8.0",
-    "@opam/dune": "*"
+    "@opam/dune": "*",
+    "@opam/notty": "*"
   },
   "devDependencies": {
     "@opam/ocaml-lsp-server": "*"
   },
   "resolutions": {
     "@opam/reason": "reasonml/reason:reason.opam#4f6ff7616bfa699059d642a3d16d8905d83555f6",
-    "ocaml": "esy-ocaml/ocaml#81dcfe8622668f5c1046f1e1e99553b93b627478"
+    "ocaml": "esy-ocaml/ocaml#81dcfe8622668f5c1046f1e1e99553b93b627478",
+    "@opam/notty": "mxthevs/notty:notty.opam#6def07c5c2d01b4d3b283c8c6fe1595c9270dad8"
   }
 }
