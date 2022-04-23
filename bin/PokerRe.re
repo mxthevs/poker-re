@@ -5,4 +5,4 @@ let () =
   |> Deck.remove_jokers
   |> Deck.shuffle
   |> List.map(Card.to_string)
-  |> List.iter(Console.log);
+  |> List.iter(print_endline);
